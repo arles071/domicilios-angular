@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+}
+.cont {
+    justify-content: center;
+}
+.tarjeta {
+    margin-left: 0;
+    margin-right: 0;
+}
+.pasos {
+    color: #525454;
+    text-decoration: underline;
+}
+.activo {
+    color: red !important;
+}
+.desables{
+    color: yellow;
+}
+.activar{
+    display: block;
+  }
+.desactivar {
+    display: none;
+    background: yellow;
+}
+.resaltar {
+    background-color: #F0F1F1!important;
+}
+.noresaltar {
+    background-color: white;
+}
+.subirImagen{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.subirImagen * {
+    white-space: normal;
+    position: absolute;
+}

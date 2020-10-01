@@ -1,0 +1,96 @@
+<div class="container">
+    
+    <div class="col">
+        <div class="card">
+            <div class="alert alert-dark" role="alert">
+                <button type="button" class="btn btn-link pasos" [ngClass]="{'activo': activos === 0 || activos === 1}" (click)="activos = 1; eventoPasos();">Paso 1</button>
+                <button type="button" [disabled]="activos === 0" class="btn btn-link pasos" [ngClass]="{'activo': activos === 2}" (click)="activos = 2; eventoPasos();">Paso 2</button>
+                
+              </div>
+            <div class="card-body">
+            <div class="form-producto" *ngIf="activos === 1 || activos === 0">
+                <form #formularioPro="ngForm" (ngSubmit)="registroProducto(formularioPro)">
+                    <!--
+                    <div class="form-group">
+                        <img *ngIf="url" [src]="url" class="rounded mb-3" width="180">
+                        <input type="file" multiple (change)="detectFiles($event)">
+                        
+                    </div>-->
+                <div class="row">
+                   
+                    <div class="form-group col-6">
+                        <label for="servicio">Servicio</label>
+                        <select class="form-control" id="exampleFormControlSelect2" #servicio (change)="servicios($event.target.value)" name="servicio">
+                            <option>Seleccione...</option>
+                            <option  *ngFor="let cat of servicioNeg" value="{{ cat.cat_id }}">{{ cat.cat_nombre }}</option>-->
+                          </select>
+                          
+                    </div>
+                  
+                    <div class="form-group col-6">
+                        <label for="sub">categorias</label>
+                        <select class="form-control" id="sub" #sub="ngModel" name="sub" [(ngModel)]="producto.prod_idSub">
+                            <option default>Seleccione...</option>
+                            <option  *ngFor="let cate of subCategorias" value="{{ cate.sub_id }}">{{ cate.sub_nombre }}</option>
+                          </select>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="nombre">Producto</label>
+                        <input type="text" class="form-control" name="nombre" id="nombre" #nombre="ngModel" [(ngModel)]="producto.prod_nombre">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="text" class="form-control" name="cantidad" id="cantidad" #cantidad="ngModel" [(ngModel)]="producto.prod_cantidad">
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="valor">Valor</label>
+                        <input type="text" class="form-control" name="valor" id="valor" #valor="ngModel" [(ngModel)]="producto.prod_valor">
+                    </div>
+                  
+                </div>
+  
+                    <button type="submit" class="btn btn-primary">Guardar y continuar</button>
+                    
+                </form>
+            </div>
+            <div class="form-paso2" *ngIf="activos === 2">
+                <div class="form-group">
+                    <div *ngIf="imagenesProducto != null">
+                        
+                        <div class="card-columns">
+                            <div class="card" *ngFor="let image of imagenesProducto">
+                                <div class="card-body">
+                                    <button class="btn btn-danger" (click)="EliminarImagenProducto(image.mul_id, image.mul_nombre)" style="
+                                        position: absolute;
+                                        bottom: 0;">Eliminar</button>
+                                    <img  src="{{ url + 'producto/image/' + image.mul_nombre }}" alt="" class="card-img-top">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <label for="image">Avatar</label>
+                    <angular-file-uploader
+                        [config]="afuConfig" 
+                        (ApiResponse)="avatarUpload($event)">
+                    </angular-file-uploader>
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+     <div class="form-group">
+                        <div *ngIf="imagen != null">
+                            <img src="{{ url + 'producto/image/' + imagen }}" alt="" class="avar_edit">
+                        </div>
+                        <label for="image">Avatar</label>
+                        <angular-file-uploader
+                            [config]="afuConfig" 
+                            (ApiResponse)="avatarUpload($event)">
+                        </angular-file-uploader>
+                    </div>
+-->

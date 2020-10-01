@@ -1,0 +1,69 @@
+<div class="container mt-4">
+    <!--
+    <div class="row">
+        <div class="col-4">
+            <ul>
+                <li>Pedidos</li>
+                <li>Mis servicios</li>
+                <li>Productos</li>
+                <li (click)="evento()">Crear productos</li>
+            </ul>
+        </div>
+        <div class="col">
+            <app-nuevo-producto *ngIf="productos"></app-nuevo-producto>
+            <div *ngIf="servicios" class="card servicios" style="padding: 10px;">
+                <h3>Servicios que ofrece mi negocio</h3>
+            <div class="row">
+            <div *ngFor="let row of categorias" class="col-4">
+                <input type="checkbox" name="categoria" id="{{ row.cat_nombre }}">
+                <label class="ml-3" for="{{ row.cat_nombre }}">{{ row.cat_nombre }}</label>
+            </div>
+        </div>
+                
+                
+                
+            </div>
+        </div>
+    </div>-->
+    
+    <div class="row">
+        <div class="col-3">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Pedidos</a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false" (click)="productos('servicios')">Mis servicios</a>
+            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false" (click)="productos('producto')">Productos</a>
+            <a class="nav-link" id="v-pills-lista-productos-tab" data-toggle="pill" href="#v-pills-lista-productos" role="tab" aria-controls="v-pills-messages" aria-selected="false" (click)="productos('listar_producto')">Listar Productos</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                ...
+            </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+              <!-- Mis servicios -->
+              <div class="card servicios" style="padding: 10px;">
+                <h3>Servicios que ofrece mi negocio</h3>
+              <div class="row">
+                <div *ngFor="let row of mostrarCategorias" class="col-4">
+                    <input type="checkbox" [(ngModel)]="row.checked" (change) = "foroMostrar(row.cat_id)">
+                    <label class="ml-3" for="{{ row.cat_nombre }}">{{ row.cat_nombre }}</label>
+                </div>
+
+            </div>
+            </div>
+            </div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+              <h3>Crear Producto</h3>
+              <app-nuevo-producto *ngIf="producto"></app-nuevo-producto>
+            </div>
+            <div class="tab-pane fade" id="v-pills-lista-productos" role="tabpanel" aria-labelledby="v-pills-lista-productos-tab">
+              <h3>Listar Productos</h3>
+              <app-lista-productos-negocio></app-lista-productos-negocio>
+            </div>
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+          </div>
+        </div>
+      </div>
+</div>

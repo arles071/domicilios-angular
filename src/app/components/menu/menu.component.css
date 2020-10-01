@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav {
+    flex-direction: row-reverse;
+    align-items: center;
+}
+ul {  
+    list-style: none;
+}
+li {
+    margin-right: 20px;
+    display: inline-block;
+    position: relative;
+}
+li>ul{
+    position: absolute;
+    min-width: 200px;
+    display: none;
+}
+li:hover > ul {
+    display:block;
+    z-index: 100;
+}
+a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: red;
+}
+.flex {
+    display: flex;
+}
+form{
+    margin-right: 20px;
+}
+input {
+    margin-left: 20px;
+}
+label {
+    font-size: 1.5rem;
+}

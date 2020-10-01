@@ -1,0 +1,32 @@
+<div class="container">
+<div class="card mt-4" >
+  <div class="row">
+    <div class="col"><img src="https://branduus.com//assets/img/admin.png" class="card-img-top" alt="...">
+    </div>
+    <div class="col">
+      <div class="card-body mt-5">
+          <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="login.usu_correo">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="login.usu_contrasena">
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Mantener Sección iniciada</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Ingresar</button>
+             <a routerLink="/registro" class="btn btn-primary ml-4">Registrarme</a>
+             
+            </form>
+  
+      </div>
+    </div>
+  </div>
+    
+    
+  </div>
+</div>

@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  ul:hover {
+    background-color: #EAEDED;
+  }
+  .list-titulo li {
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  li {
+    margin-left: 20px;
+    cursor: pointer;
+    width: 120px;
+    text-align: center;
+  }
+  li:first-child {
+    margin-left: 0;
+    width: 150px;
+  }
+  hr{
+    width: 600px;
+    margin: 0 auto;
+  }
+  .imagenes {
+    width: 600px;
+    margin: 10px auto;
+    background-color: #F3F6F6;
+    padding: 10px;
+    display: none;
+  }
+  .img {
+    height: 150px;
+    width: 120px;
+    display: inline-block;
+    position: relative;
+  }
+  .img:hover i{
+    display: inline-block;
+  }
+  .img i {
+    height: 150px;
+    font-size: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: red;
+    display: none;
+    cursor: pointer;
+  }
+  img {
+    height: 100%;
+    width: 100%;
+  }
+  .new-image {
+      font-size: 70px;
+      position: absolute;
+      left: 35px;
+      bottom: 40px;
+  }
+  .new-image:hover {
+    color: grey;
+  }
+  .fila{
+    padding: 10px;
+  }
+  .fila .list-content {
+    
+  }
+  .fila .activado {
+    background: yellow;
+  }
+  .activar{
+    display: block;
+  }
+  

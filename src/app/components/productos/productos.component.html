@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="card-columns">
+        <div class="card" *ngFor="let item of imagenesProducto">
+            <div class="card-body">
+                <button class="btn btn-danger">Eliminar</button>
+                <img  src="{{ url + 'producto/image/' + item.mul_nombre }}" alt="" class="card-img-top">
+            </div>
+        </div>
+    </div>
+    
+</div>

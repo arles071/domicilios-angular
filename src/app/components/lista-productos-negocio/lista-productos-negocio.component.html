@@ -1,0 +1,59 @@
+
+
+
+
+<div>
+  <ul class="list-titulo">
+    <li>Producto</li>
+    <li>Categoria</li>
+    <li>Cantidad</li>
+    <li>Valor</li>
+  </ul>
+
+  <hr>
+<div class="fila" *ngFor="let item of productosNegocio">
+  <ul class="list-content" (click)="activo = item.id" [className]="activo === item.id?'resaltar':'noresaltar'">
+    <li>{{item.nombre}}</li>
+    <li>{{item.subCategoria}}</li>
+    <li>{{item.cantidad}}</li>
+    <li>{{item.valor}}</li>
+  </ul>
+<div class="imagenes" [className]="activo === item.id ? 'activar' : 'desactivar'">
+  <div class="row">
+    
+      <div class="col" *ngFor="let img of item.imagenes">
+        <div class="img">
+          <img src="{{ url + 'producto/image/' + img.img }}">
+          <i class="fas fa-trash"></i>
+        </div>
+      </div>
+   <div class="img" (click)="subirImagen(item.id)">
+     
+      <div class="subirImagen">
+        <angular-file-uploader
+                        [config]="afuConfig" 
+                        (ApiResponse)="avatarUpload($event)"
+                        style="top: 34px;">
+        </angular-file-uploader>
+      </div>
+      
+                    
+    </div>
+    
+  </div>
+</div>
+</div>
+
+
+
+<!-- inicio -->
+
+<!-- fin -->
+  <hr> 
+  <ul class="list-content">
+    <li>Patacon con todo</li>
+    <li>Comida rapida</li>
+    <li>223</li>
+    <li>12000</li>
+  </ul>
+</div>
